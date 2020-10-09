@@ -10,3 +10,5 @@ Deno.writeFile('message.txt', data)
    .then(() => {
       console.log('Wrote to file')
    })
+
+console.log('code here-')
