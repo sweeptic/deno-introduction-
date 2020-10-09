@@ -1,5 +1,12 @@
-let message: string;
+const text = "this is a test";
 
-message = 'hello there';
+const encoder = new TextEncoder();
+const data = encoder.encode(text);
 
-console.log(message);
+
+
+Deno.writeFile('message.txt', data)
+
+   .then(() => {
+      console.log('Wrote to file')
+   })
