@@ -1,14 +1,7 @@
-const text = "this is a test";
+import { serve } from "https://deno.land/std@0.74.0/http/server.ts";
 
-const encoder = new TextEncoder();
-const data = encoder.encode(text);
-
-
-
-Deno.writeFile('message.txt', data)
-
-   .then(() => {
-      console.log('Wrote to file');
-   })
-
-console.log('code here-');
+const s = serve({ port: 8000 });
+console.log("http://localhost:8000/");
+for await (const req of s) {
+   req.respond({ body: "Hello World\n" });
+}
